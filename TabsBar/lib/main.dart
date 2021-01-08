@@ -14,8 +14,12 @@ class MyApp extends StatelessWidget {
             title: Text("AppBar com guias"),
             bottom: TabBar(
               tabs: <Widget>[
-                Text('Primeira Guia'),
-                Text('Segunda Guia'),
+                Tab(
+                  icon: Icon(Icons.android),
+                ),
+                Tab(
+                  icon: Icon(Icons.cloud_download),
+                ),
               ],
             ),
           ),
