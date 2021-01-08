@@ -23,6 +23,12 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
+          body: TabBarView(
+            children: <Widget>[
+              Text('Primeira guia selecionada'),
+              Text('Segunda guia selecionada'),
+            ],
+          ),
         ),
       ),
     );
