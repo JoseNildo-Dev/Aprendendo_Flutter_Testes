@@ -7,9 +7,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("AppBar com guias"),
+      home: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("AppBar com guias"),
+            bottom: TabBar(
+              tabs: <Widget>[
+                Text('Primeira Guia'),
+                Text('Segunda Guia'),
+              ],
+            ),
+          ),
         ),
       ),
     );
