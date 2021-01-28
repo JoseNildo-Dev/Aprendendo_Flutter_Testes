@@ -85,4 +85,17 @@ class _MeuFormState extends State<MeuForm> {
     }
     return null;
   }
+
+  String _validarCelular(String value) {
+    String patttern = r'(^[0-9]*$)';
+    RegExp regExp = new RegExp(patttern);
+    if (value.length == 0) {
+      return "Informe o celular";
+    } else if (value.length != 10) {
+      return "O celular deve ter 10 dígitos";
+    } else if (!regExp.hasMatch(value)) {
+      return "O número do celular so deve conter dígitos";
+    }
+    return null;
+  }
 }
