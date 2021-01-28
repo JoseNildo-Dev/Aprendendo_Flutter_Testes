@@ -74,4 +74,15 @@ class _MeuFormState extends State<MeuForm> {
       ],
     );
   }
+
+  String _validarNome(String value) {
+    String patttern = r'(^[a-zA-Z ]*$)';
+    RegExp regExp = RegExp(patttern);
+    if (value.length == 0) {
+      return "Informe o nome";
+    } else if (!regExp.hasMatch(value)) {
+      return "O nome deve conter caracteres de a-z ou A-Z";
+    }
+    return null;
+  }
 }
