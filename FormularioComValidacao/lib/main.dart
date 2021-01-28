@@ -111,4 +111,20 @@ class _MeuFormState extends State<MeuForm> {
       return null;
     }
   }
+
+  _sendForm() {
+    if (_key.currentState.validate()) {
+      // sem erros na validação
+      print("Nome: $nome");
+      print("Celular: $celular");
+      print("Email: $email");
+    } else {
+      // com erros na validação
+      setState(
+        () {
+          _validate = true;
+        },
+      );
+    }
+  }
 }
