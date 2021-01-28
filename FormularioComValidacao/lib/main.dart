@@ -8,14 +8,30 @@ class MeuForm extends StatefulWidget {
 }
 
 class _MeuFormState extends State<MeuForm> {
-  final _formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> _key = new GlobalKey();
+  bool _validate = false;
+  String nome;
+  String email;
+  String celular;
 
   @override
   Widget build(BuildContext context) {
-    // Cria o widget Form usando _formKey
-    return Form(
-      key: _formKey,
-      child: ,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Formulário com Validação'),
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.all(15.0),
+            child: Form(
+              key: _key,
+              autovalidate: _validate,
+              child: formUI(),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
