@@ -27,11 +27,51 @@ class _MeuFormState extends State<MeuForm> {
             child: Form(
               key: _key,
               autovalidate: _validate,
-              child: formUI(),
+              child: _formUI(),
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Widget _formUI() {
+    return new Column(
+      children: <Widget>[
+        TextFormField(
+          decoration: new InputDecoration(hintText: 'Nome Completo'),
+          maxLength: 40,
+          validator: _validarNome,
+          onSaved: (String val) {
+            nome = val;
+          },
+        ),
+        TextFormField(
+          decoration: new InputDecoration(hintText: 'Celular'),
+          keyboardType: TextInputType.phone,
+          maxLength: 10,
+          validator: _validarCelular,
+          onSaved: (String val) {
+            celular = val;
+          },
+        ),
+        TextFormField(
+          decoration: new InputDecoration(hintText: 'Email'),
+          keyboardType: TextInputType.emailAddress,
+          maxLength: 40,
+          validator: _validarEmail,
+          onSaved: (String val) {
+            nome = val;
+          },
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        RaisedButton(
+          onPressed: _sendForm,
+          child: Text('Enviar'),
+        ),
+      ],
     );
   }
 }
